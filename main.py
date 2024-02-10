@@ -90,7 +90,7 @@ async def update_article(
     article_no: int, updated_article: Article, db: Session = Depends(get_db)
 ):
     db.query(ArticleDB).filter(
-        ArticleDB.article_no == article_no).update(updated_article.model_dict()
+        ArticleDB.article_no == article_no).update(updated_article.dict()
                                                    )
     db.commit()
     return updated_article
