@@ -57,6 +57,7 @@ The iRecharge API is designed to manage articles related to different providers,
 **Description:** Retrieve a list of all articles.
 
 **Response:**
+
     ```json
     [
         {
@@ -69,15 +70,13 @@ The iRecharge API is designed to manage articles related to different providers,
     ]
 
 
-# API Endpoints
 
 ## Get Article by ID
-- **Endpoint:** `GET /articles/{article_no}`
+**Endpoint:** `GET /articles/{article_no}`
 
-- **Description:** Retrieve details of a specific article by its article_no.
+**Description:** Retrieve details of a specific article by its article_no.
 
-- **Response:**
-
+**Response:**
 
     ```json
     {
@@ -157,9 +156,9 @@ The iRecharge API is designed to manage articles related to different providers,
     ```
 
 ## Testing
-To run tests, use pytest:
-```bash
-pytest tests/
+    To run tests, use pytest:
+        ```bash
+        pytest tests/
 
 
 
