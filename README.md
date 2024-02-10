@@ -82,15 +82,15 @@ The iRecharge API is designed to manage articles related to different providers,
 
         {
 
-        "article_no": 101,
+    "article_no": 101,
 
-        "currency": "US Dollar",
+    "currency": "US Dollar",
 
-        "provider_no": "0001",
+    "provider_no": "0001",
 
-        "provider": "Flutterwave",
+    "provider": "Flutterwave",
 
-        "price": 1000
+    "price": 1000
 
         },
 
@@ -99,11 +99,11 @@ The iRecharge API is designed to manage articles related to different providers,
 
 ## Get Article by ID
 
-- **Endpoint:** `GET /articles/{article_no}`
+**Endpoint:** `GET /articles/{article_no}`
 
-- **Description:** Retrieve details of a specific article by its article_no.
+**Description:** Retrieve details of a specific article by its article_no.
 
-- **Response:**
+**Response:**
 
     ```json
 
@@ -243,7 +243,7 @@ The iRecharge API is designed to manage articles related to different providers,
 
 ## Testing
 
-- **To run tests, use pytest:**
+To run tests, use pytest:
 
     ```bash
 
