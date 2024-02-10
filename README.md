@@ -43,14 +43,29 @@ The iRecharge API is designed to manage articles related to different providers,
     cd irecharge-api
     ```
 
-3. **Install dependencies:**
 
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4. **Set up the MySQL database:**
+3. **Set up the MySQL database:**
 
     - Create a database named `irecharge`.
     - Update the `DATABASE_URL` in `main.py` with your MySQL credentials.
+
+
+
+## List Articles
+**Endpoint:** `GET /articles/`
+
+**Description:** Retrieve a list of all articles.
+
+**Response:**
+```json
+[
+    {
+        "article_no": 101,
+        "currency": "US Dollar",
+        "provider_no": "0001",
+        "provider": "Flutterwave",
+        "price": 1000
+    },
+    // ... other articles
+]
 
