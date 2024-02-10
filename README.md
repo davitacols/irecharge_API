@@ -50,7 +50,6 @@ The iRecharge API is designed to manage articles related to different providers,
     - Update the `DATABASE_URL` in `main.py` with your MySQL credentials.
 
 
-
 ## List Articles
 **Endpoint:** `GET /articles/`
 
@@ -71,7 +70,7 @@ The iRecharge API is designed to manage articles related to different providers,
 
 
 
-## Get Article by ID
+
 **Endpoint:** `GET /articles/{article_no}`
 
 **Description:** Retrieve details of a specific article by its article_no.
@@ -87,6 +86,8 @@ The iRecharge API is designed to manage articles related to different providers,
         "price": 1000
     }
     ```
+
+
 
 ## Create Article
 
@@ -160,7 +161,9 @@ The iRecharge API is designed to manage articles related to different providers,
 To run tests, use pytest:
 
     ```bash
+
     pytest tests/
+
     ```
 
 

@@ -9,7 +9,7 @@ from typing import List
 app = FastAPI()
 
 # Configure CORS
-origins = ["http://localhost", "http://localhost:3000"]  # Add your frontend URL(s) here
+origins = ["http://localhost", "http://localhost:3000"]
 
 app.add_middleware(
     CORSMiddleware,
@@ -33,7 +33,7 @@ class ArticleDB(Base):
     price = Column(Float)
 
 
-DATABASE_URL = "mysql+mysqlconnector://root:@localhost/irecharge"  # Update with your MySQL database info
+DATABASE_URL = "mysql+mysqlconnector://root:@localhost/irecharge"
 engine = create_engine(DATABASE_URL)
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
@@ -68,7 +68,9 @@ async def read_articles(db: Session = Depends(get_db)):
 
 @app.get("/articles/{article_no}", response_model=Article)
 async def read_article(article_no: int, db: Session = Depends(get_db)):
-    article = db.query(ArticleDB).filter(ArticleDB.article_no == article_no).first()
+    article = db.query(ArticleDB).filter(
+        ArticleDB.article_no == article_no
+    ).first()
     if article:
         return article
     raise HTTPException(status_code=404, detail="Article not found")
@@ -84,15 +86,21 @@ async def create_article(article: Article, db: Session = Depends(get_db)):
 
 
 @app.put("/articles/{article_no}", response_model=Article)
-async def update_article(article_no: int, updated_article: Article, db: Session = Depends(get_db)):
-    db.query(ArticleDB).filter(ArticleDB.article_no == article_no).update(updated_article.dict())
+async def update_article(
+    article_no: int, updated_article: Article, db: Session = Depends(get_db)
+):
+    db.query(ArticleDB).filter(
+        ArticleDB.article_no == article_no).update(updated_article.model_dict()
+                                                   )
     db.commit()
     return updated_article
 
 
 @app.delete("/articles/{article_no}", response_model=Article)
 async def delete_article(article_no: int, db: Session = Depends(get_db)):
-    deleted_article = db.query(ArticleDB).filter(ArticleDB.article_no == article_no).first()
+    deleted_article = db.query(ArticleDB).filter(
+        ArticleDB.article_no == article_no
+    ).first()
     if deleted_article:
         db.delete(deleted_article)
         db.commit()
