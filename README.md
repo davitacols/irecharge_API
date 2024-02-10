@@ -66,7 +66,6 @@ The iRecharge API is designed to manage articles related to different providers,
         "provider": "Flutterwave",
         "price": 1000
     },
-    // ... other articles
 ]
 
 
