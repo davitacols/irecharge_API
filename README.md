@@ -69,3 +69,105 @@ The iRecharge API is designed to manage articles related to different providers,
     // ... other articles
 ]
 
+
+
+
+# API Endpoints
+
+## Get Article by ID
+- **Endpoint:** `GET /articles/{article_no}`
+
+- **Description:** Retrieve details of a specific article by its article_no.
+
+- **Response:**
+
+
+    ```json
+    {
+        "article_no": 101,
+        "currency": "US Dollar",
+        "provider_no": "0001",
+        "provider": "Flutterwave",
+        "price": 1000
+    }
+    ```
+
+## Create Article
+
+- **Endpoint:** `POST /articles/`
+
+- **Description:** Create a new article.
+
+- **Request:**
+
+    ```json
+    {
+        "article_no": 104,
+        "currency": "EU Euro",
+        "provider_no": "0009",
+        "provider": "Stripe",
+        "price": 1500
+    }
+    ```
+- **Response:**
+
+    ```json
+    {
+        "article_no": 104,
+        "currency": "EU Euro",
+        "provider_no": "0009",
+        "provider": "Stripe",
+        "price": 1500
+    }
+    ```
+
+## Update Article
+- **Endpoint:** `PUT /articles/{article_no}`
+- **Description:** Update details of a specific article by its article_no.
+- **Request:**
+    ```json
+    {
+        "article_no": 104,
+        "currency": "EU Euro",
+        "provider_no": "0009",
+        "provider": "Stripe",
+        "price": 2000
+    }
+    ```
+- **Response:**
+    ```json
+    {
+        "article_no": 104,
+        "currency": "EU Euro",
+        "provider_no": "0009",
+        "provider": "Stripe",
+        "price": 2000
+    }
+    ```
+
+## Delete Article
+- **Endpoint:** `DELETE /articles/{article_no}`
+- **Description:** Delete a specific article by its article_no.
+- **Response:**
+    ```json
+    {
+        "article_no": 104,
+        "currency": "EU Euro",
+        "provider_no": "0009",
+        "provider": "Stripe",
+        "price": 2000
+    }
+    ```
+
+## Testing
+To run tests, use pytest:
+```bash
+pytest tests/
+
+
+
+# Contributing
+Contributions are welcome! Please check the [Contribution Guidelines](CONTRIBUTING.md) for more details.
+
+# License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
