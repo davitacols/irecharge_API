@@ -44,7 +44,7 @@ def test_update_article():
         "price": 79.99
     }
 
-    response = requests.put(f"{BASE_URL}/articles/105", json=data)
+    response = requests.put(f"{BASE_URL}/articles/102", json=data)
     assert response.status_code == 200
 
     # Access the returned data and assert
