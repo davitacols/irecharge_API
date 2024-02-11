@@ -71,21 +71,7 @@ The iRecharge API is designed to manage articles related to different providers,
 
 
 
-**Endpoint:** `GET /articles/{article_no}`
-
-**Description:** Retrieve details of a specific article by its article_no.
-
-**Response:**
-
-    ```json
-    {
-        "article_no": 101,
-        "currency": "US Dollar",
-        "provider_no": "0001",
-        "provider": "Flutterwave",
-        "price": 1000
-    }
-    ```
+ 
 
 
 
